@@ -13,7 +13,6 @@ paths:
       description: "Gets `Person` objects.\nOptional query param of **size** determines\n"
       produces:
       - "application/json"
-      - "application/xml"
       parameters:
       - name: "skip"
         in: "query"
