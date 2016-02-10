@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.eatbacon</groupId>
-    <artifactId>swaggerhub-sample</artifactId>
+    <artifactId>swaggerhub-client-sample</artifactId>
     <packaging>jar</packaging>
-    <name>swaggerhub-sample</name>
+    <name>swaggerhub-client-sample</name>
     <version>1.0.0-SNAPSHOT</version>
     <prerequisites>
         <maven>2.2.0</maven>
@@ -25,7 +25,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://api.swaggerhub.com/apis/fehguy/inflect-it/1.0.0</url>
+                            <url>https://api.swaggerhub.com/apis/fehguy/swaggerhub-sample/1.0.0</url>
                             <outputFileName>swagger.json</outputFileName>
                             <outputDirectory>${project.build.directory}/conf</outputDirectory>
                             <skipCache>true</skipCache>
@@ -67,7 +67,7 @@
     <profiles>
         <!-- generates pojos for a swagger definition -->
         <profile>
-            <id>pojos</id>
+            <id>regen</id>
             <build>
                 <plugins>
                     <plugin>
@@ -103,6 +103,13 @@
 
     </profiles>
     <dependencies>
+        <!-- Swagger annotations -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger-annotations.version}</version>
+        </dependency>
+
         <!-- HTTP client: jersey-client -->
         <dependency>
             <groupId>com.sun.jersey</groupId>
@@ -115,18 +122,43 @@
             <version>${jersey-version}</version>
         </dependency>
 
+        <!-- JSON processing: jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodatime-version}</version>
+        </dependency>
+
         <!-- Base64 encoding that works in both JVM and Android -->
         <dependency>
             <groupId>com.brsanthu</groupId>
             <artifactId>migbase64</artifactId>
             <version>2.2</version>
-        </dependency>
-
-        <!-- core dependencies -->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-inflector</artifactId>
-            <version>${inflector.version}</version>
         </dependency>
 
         <!-- Logging -->
@@ -173,13 +205,21 @@
             </exclusions>
         </dependency>
     </dependencies>
+    <!-- we're using a development version of the maven plugin, so add the plugin repo for now -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype.snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
     <properties>
-        <codegen.version>2.1.5</codegen.version>
+        <codegen.version>2.1.6-SNAPSHOT</codegen.version>
+        <swagger-annotations.version>1.5.7</swagger-annotations.version>
         <jersey-version>1.18</jersey-version>
-        <inflector.version>1.0.2</inflector.version>
+        <jackson-version>2.4.2</jackson-version>
+        <jodatime-version>2.3</jodatime-version>
         <logback.version>1.0.1</logback.version>
         <slf4j.version>1.6.3</slf4j.version>
-        <servlet-api.version>2.5</servlet-api.version>
         <junit.version>4.8.1</junit.version>
     </properties>
 </project>
