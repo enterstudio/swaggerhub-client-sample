@@ -1,0 +1,10 @@
+sudo: false
+language: java
+jdk:
+  - oraclejdk7
+
+# since we are not committing our generated sources, need to update the install script
+install: mvn install -Pregen
+
+script: mvn verify
+
