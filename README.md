@@ -1,5 +1,7 @@
 ### Swaggerhub Client Sample
 
+[![Build Status](https://travis-ci.org/fehguy/swaggerhub-client-sample.svg)](https://travis-ci.org/fehguy/swaggerhub-client-sample)
+
 This is an example for introducing swaggerhub into the workflow of generating an API client.
 It is based on a public API definition:
 
