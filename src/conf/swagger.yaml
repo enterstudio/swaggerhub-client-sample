@@ -92,6 +92,7 @@
   "definitions" : {
     "Person" : {
       "type" : "object",
+      "required" : [ "id" ],
       "properties" : {
         "id" : {
           "description" : "The unique user identifier",
