@@ -116,12 +116,6 @@
         },
         "address" : {
           "$ref" : "#/definitions/Address"
-        },
-        "pets" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "myPojos.json#/Pet"
-          }
         }
       }
     },
