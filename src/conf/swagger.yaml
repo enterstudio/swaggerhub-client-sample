@@ -115,34 +115,7 @@
           "example" : false
         },
         "address" : {
-          "$ref" : "#/definitions/Address"
-        }
-      }
-    },
-    "Address" : {
-      "type" : "object",
-      "properties" : {
-        "street" : {
-          "description" : "the street name, line 1",
-          "type" : "string",
-          "example" : "12894 El Monte Blvd."
-        },
-        "city" : {
-          "description" : "the cit",
-          "type" : "string",
-          "example" : "Los Altos Hills"
-        },
-        "state" : {
-          "description" : "The two-character state",
-          "minLength" : 2,
-          "maxLength" : 2,
-          "type" : "string",
-          "example" : "CA"
-        },
-        "zip" : {
-          "description" : "Zip code, Zip+4 allowed",
-          "type" : "string",
-          "example" : 94022
+          "$ref" : "https://api.swaggerhub.com/domains/fehguy/common/1.0.0#/definitions/Address"
         }
       }
     }
