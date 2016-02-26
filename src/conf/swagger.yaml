@@ -43,7 +43,7 @@
           "name" : "limit",
           "in" : "query",
           "description" : "max records to return",
-          "required" : true,
+          "required" : false,
           "type" : "integer",
           "format" : "int32"
         } ],
