@@ -38,7 +38,7 @@
           "description" : "records to skip",
           "required" : true,
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int64"
         }, {
           "name" : "limit",
           "in" : "query",
