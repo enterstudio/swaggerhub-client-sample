@@ -86,8 +86,8 @@
                                         <sourceFolder>src/gen/java</sourceFolder>
                                     </configOptions>
                                     <environmentVariables>
-                                        <models></models>
-                                        <apis></apis>
+                                        <models/>
+                                        <apis/>
                                     </environmentVariables>
                                     <output>.</output>
                                     <modelPackage>org.eatbacon.models</modelPackage>
@@ -216,9 +216,9 @@
         <codegen.version>2.1.6-SNAPSHOT</codegen.version>
         <swagger-annotations.version>1.5.7</swagger-annotations.version>
         <jersey-version>1.18</jersey-version>
-        <jackson-version>2.4.2</jackson-version>
+        <jackson-version>2.9.7</jackson-version>
         <jodatime-version>2.3</jodatime-version>
-        <logback.version>1.0.1</logback.version>
+        <logback.version>1.2.0</logback.version>
         <slf4j.version>1.6.3</slf4j.version>
         <junit.version>4.8.1</junit.version>
     </properties>
